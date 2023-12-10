@@ -6,8 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PostRequest extends FormRequest
 {
-
-
     public function rules()
     {
         return [
@@ -15,5 +13,4 @@ class PostRequest extends FormRequest
             'post.body' => 'required|string|max:4000',
         ];
     }
-
 }

@@ -5,12 +5,12 @@
          <title>Blog</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:200,600" rel="stylesheet">
 
     </head>
-    <body class="antialiased">
-        <h1>Blog Name</h1>
-        <a href='/posts/create'>create</a>
+    <body class='antialiased'>
+        <h1>Blog Name </h1>
+        <a href="/posts/create">create</a>
         <div class='posts'>
             @foreach($posts as $post)
             <div class='post'>

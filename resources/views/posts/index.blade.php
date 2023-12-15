@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <x-app-layout>
+        <x-slot name="header">
     <head>
         <meta charset="utf-8">
          <title>Blog</title>
+          {{ Auth::user()->name }}
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:200,600" rel="stylesheet">
 
     </head>
+    </x-slot>
     <body class='antialiased'>
         <h1>Blog Name </h1>
         <a href="/posts/create">create</a>
@@ -24,6 +28,7 @@
                 <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
             </form>
         </div>
+        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
             @endforeach
         </div>
         <div class='paginate'>{{ $posts->links() }}</div>
@@ -36,5 +41,15 @@
                  }
              }
         </script>
+        <div>
+            @foreach($questions as $question)
+                <div> 
+                 <a href="https://teratail.com/questions/{{ $question['id'] }}">
+                    {{ $question['title'] }}
+                 </a>
+                </div>
+            @endforeach
+        </div>
     </body>
+    </x-app-layout>
 </html>
